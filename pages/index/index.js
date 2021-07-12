@@ -1,17 +1,25 @@
 // 网络请求
-import requsrt from '../../request/request'
+import { swiper } from '../../api/home'
 
 Page({
   data: {
     swiperList: [] // 轮播图数组
   },
 
-  onLoad: async function(options) {
-    // 发送请求  我这里封装了一层
-    const { data } = await requsrt('/api/public/v1/home/swiperdata', 'GET')
+  onLoad: async function() {
+    // 发送请求  我这里封装了两层
+    const { data } = await swiper()
     this.setData({
       swiperList: data.message
     })
+
+    // let obj = { yy: 44, gg: 22 };
+    // let obj1 = {
+    //   ...obj,
+    //   jj: 555,
+    //   tt: 777
+    // } 也是合并的意思
+    // console.log(obj1);
   },
   onReady: function() {
 

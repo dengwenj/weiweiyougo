@@ -1,3 +1,10 @@
-view {
-  /* color: var(--themeColor); */
+.index .array {
+  height: 340rpx;
+}
+.index .array .swiper {
+  width: 100%;
+  height: 100%;
+}
+.index .array .swiper .swiper-image {
+  width: 100%;
 }
