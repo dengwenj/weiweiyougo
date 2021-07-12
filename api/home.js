@@ -7,3 +7,11 @@ export const swiper = () => {
     method: 'GET'
   })
 }
+
+// 导航数据
+export const nav = () => {
+  return requsrt({
+    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems',
+    method: 'GET'
+  })
+}

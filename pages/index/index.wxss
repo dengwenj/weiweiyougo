@@ -8,3 +8,13 @@
 .index .array .swiper .swiper-image {
   width: 100%;
 }
+.index .nav {
+  display: flex;
+}
+.index .nav .nav-item {
+  padding: 20rpx;
+  flex: 1;
+}
+.index .nav .nav-item .nav-image {
+  width: 100%;
+}

@@ -5,12 +5,21 @@
   <!-- 轮播图 -->
   <view class="array">
     <swiper class="swiper" autoplay indicator-dots interval="3000" circular>
-      <swiper-item class="swiper-item" wx:for="{{swiperList}}" wx:key="goods_id">
+      <swiper-item class="swiper-item" wx:for="{{ swiperList }}" wx:key="goods_id">
         <navigator>
-          <image class="swiper-image" src="{{item.image_src}}" mode="widthFix"></image>
+          <image class="swiper-image" src="{{ item.image_src }}" mode="widthFix"></image>
         </navigator>
       </swiper-item>
     </swiper>
   </view>
   <!-- !轮播图 -->
+  <!-- 导航 -->
+  <view class="nav">
+    <view class="nav-item" wx:for="{{ navList }}" wx:key="name">
+      <navigator class="dh">
+        <image class="nav-image" src="{{ item.image_src }}" mode="widthFix"></image>
+      </navigator>
+    </view>
+  </view>
+  <!-- 导航 -->
 </view>
