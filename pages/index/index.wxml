@@ -1,4 +1,5 @@
 <view>
-  首页
-  <text class="iconfont  icon-receipt-address"></text>
+  <!-- 搜索框 -->
+  <SearchInput />
+  <!-- /搜索框 -->
 </view>
