@@ -1,11 +1,17 @@
-//Page Object
+// 网络请求
+import requsrt from '../../request/request'
+
 Page({
   data: {
-
+    swiperList: [] // 轮播图数组
   },
-  //options(Object)
-  onLoad: function(options) {
 
+  onLoad: async function(options) {
+    // 发送请求  我这里封装了一层
+    const { data } = await requsrt('/api/public/v1/home/swiperdata', 'GET')
+    this.setData({
+      swiperList: data.message
+    })
   },
   onReady: function() {
 
