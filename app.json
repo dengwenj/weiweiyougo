@@ -18,7 +18,7 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#0094ff",
     "navigationBarTitleText": "尾尾优购",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#000",
