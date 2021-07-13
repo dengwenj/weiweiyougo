@@ -1,2 +1,31 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
+<view class="cates">
+  <SearchInput />
+  <view class="cates_cotainer">
+    <!-- 左侧菜单 -->
+    <scroll-view scroll-y class="left_menu">
+      <view class="title {{ index1 === 0 ? 'active':'' }}" wx:for="{{ leftMenuList }}" wx:for-index="index1" wx:for-item="item1" wx:key="*this">
+        {{item1}}
+      </view>
+    </scroll-view>
+    <!-- /左侧菜单 -->
+    <!-- 右侧商品内容 -->
+    <scroll-view scroll-y class="right_content">
+      <view class="waiceng">
+        <view class="list" wx:for="{{ rightContent }}" wx:for-item="item2" wx:for-index="index2" wx:key="cat_id">
+          <view class="biaoti">
+            <text class="xie">/</text>
+            <text class="zhongjian">{{ item2.cat_name }}</text>
+            <text class="xie">/</text>
+          </view>
+          <view>
+            <navigator wx:for="{{ item2.children }}" wx:for-index="index3" wx:for-item="item3" wx:key="cat_id">
+              <image src="{{ item3.cat_icon }}" mode="widthFix"></image>
+              <text class="name">{{ item3.cat_name }}</text>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+    <!-- /右侧商品内容 -->
+  </view>
+</view>

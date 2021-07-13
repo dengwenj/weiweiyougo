@@ -1,0 +1,65 @@
+page{
+  height: 100%;
+}
+.cates{
+  height: 100%;
+ .cates_cotainer{
+   height: calc( 100vh - 90rpx );
+   display: flex;
+   .left_menu{
+    //  子项会继承父项的高度
+     flex: 2;
+     display: flex;
+     .title{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: 90rpx;
+       font-size: 30rpx;
+     }
+   }
+   .right_content{
+     flex: 5;
+     .waiceng{
+       .list{
+         display: flex;
+         flex-direction: column;
+         .biaoti{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           margin: 20rpx 0 ;
+           .xie{
+             color: #ccc;
+           }
+           .zhongjian{
+             padding: 10rpx;
+             color: #000;
+           }
+         }
+         view{
+          display: flex;
+          flex-wrap: wrap;
+          navigator{
+            width: 33.33%;
+            display: flex;
+            flex-direction: column;   
+            justify-content: center;
+            align-items: center;
+            image{
+              width: 50%;
+           }
+           .name{
+             font-size: 28rpx;
+           }
+         }
+       }
+     }
+   }
+ }
+} 
+}
+.active{
+  color: var(--themeColor);
+  border-left: 7rpx solid var(--themeColor);
+}
