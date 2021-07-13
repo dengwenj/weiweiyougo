@@ -18,7 +18,7 @@
             <text class="xie">/</text>
           </view>
           <view>
-            <navigator wx:for="{{ item2.children }}" wx:for-index="index3" wx:for-item="item3" wx:key="cat_id">
+            <navigator url="/pages/goods_list/goods_list?cid={{ item3.cat_id }}" wx:for="{{ item2.children }}" wx:for-index="index3" wx:for-item="item3" wx:key="cat_id">
               <image src="{{ item3.cat_icon }}" mode="widthFix"></image>
               <text class="name">{{ item3.cat_name }}</text>
             </navigator>
