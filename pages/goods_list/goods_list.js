@@ -1,7 +1,6 @@
 // 网络请求
 import { goodsSearch } from "../../api/goods"
 
-
 Page({
 
   /**
@@ -59,6 +58,7 @@ Page({
     })
   },
 
+  // 商品列表
   async _goodsSearch(data) {
     const res = await goodsSearch(data)
     this.total = res.data.message.total
@@ -66,6 +66,9 @@ Page({
     this.setData({
       goodsList: [...this.data.goodsList, ...res.data.message.goods] // 合并数组 下拉加载很多还有数据
     })
+
+    // 下拉刷新数据加载了 就关闭下拉加载
+    wx.stopPullDownRefresh()
   },
 
   // 上拉加载触底生命周期函数
@@ -97,11 +100,26 @@ Page({
       return wx.showToast({
         title: '数据加载完啦~',
         icon: 'none',
-        duration: 2500
+        duration: 2000
       })
     }
 
     // 发送请求
+    this._goodsSearch(this.queryParams)
+  },
+
+  // 下拉刷新
+  onPullDownRefresh() {
+    /* 
+      1 触发下拉刷新事件 需要早页面的 json 文件中开启一个配置项
+        找到触发下拉刷新的事件
+      2 重置数据 数组
+      3 重置页码设置为1
+      4 重新发送请求
+      5 数据请求回来关闭下拉刷新
+    */
+    this.data.goodsList = []
+    this.queryParams.pagenum = 1
     this._goodsSearch(this.queryParams)
   }
 })
