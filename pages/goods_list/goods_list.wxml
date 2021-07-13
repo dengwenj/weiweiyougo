@@ -1,2 +1,6 @@
-<!--pages/goods_list/goods_list.wxml-->
-<text>pages/goods_list/goods_list.wxml</text>
+<SearchInput />
+<Tabs tabs="{{ tabs }}" binditemTap="ItemTap">
+  <view wx:if="{{ tabs[0].isActive }}">11</view>
+  <text class="xl" wx:elif="{{ tabs[1].isActive }}">开发中...</text>
+  <text class="jg" wx:else>开发中...</text>
+</Tabs>
