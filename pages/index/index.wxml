@@ -21,5 +21,27 @@
       </navigator>
     </view>
   </view>
-  <!-- 导航 -->
+  <!-- /导航 -->
+  <!-- 楼层 -->
+  <view class="lc">
+    <view class="floor" wx:for="{{ floorList }}" wx:key="floor_title">
+      <view class="qb">
+        <!-- 标题 -->
+        <view class="floor_title">
+          <image class="image1" src="{{ item.floor_title.image_src }}" mode="widthFix"></image>
+        </view>
+        <!-- 标题 -->
+        <!-- 内容 -->
+        <view class="bottom">
+          <view class="product_list" wx:for="{{ item.product_list }}" wx:key="image_width" wx:for-item="item2" wx:for-index="index2">
+            <navigator class="">
+              <image class="image2" src="{{ item2.image_src }}" mode="{{index2 === 0 ? 'widthFix':'widthFix'}}"></image>
+            </navigator>
+          </view>
+        </view>
+        <!-- 内容 -->
+      </view>
+    </view>
+  </view>
+  <!-- /楼层 -->
 </view>

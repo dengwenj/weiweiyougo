@@ -18,3 +18,33 @@
 .index .nav .nav-item .nav-image {
   width: 100%;
 }
+.index .lc {
+  margin-top: 30rpx;
+}
+.index .lc .floor {
+  display: flex;
+}
+.index .lc .floor .qb {
+  padding-left: 10rpx;
+  width: 100%;
+}
+.index .lc .floor .qb .floor_title {
+  width: 100%;
+  height: 50rpx;
+  margin-bottom: 30rpx;
+}
+.index .lc .floor .qb .floor_title .image1 {
+  width: 100%;
+}
+.index .lc .floor .qb .bottom .product_list navigator {
+  float: left;
+  width: 33.33%;
+}
+.index .lc .floor .qb .bottom .product_list navigator:nth-last-child(-n+4) {
+  height: 386 / 3.75vw;
+  padding-right: 10rpx;
+}
+.index .lc .floor .qb .bottom .product_list .image2 {
+  width: 100%;
+  height: 100%;
+}

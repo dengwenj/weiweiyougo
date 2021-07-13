@@ -1,17 +1,18 @@
 // 网络请求
-import { swiper, nav } from '../../api/home'
+import { swiper, nav, floor } from '../../api/home'
 
 Page({
   data: {
     swiperList: [], // 轮播图数组
-    navList: []
+    navList: [], // 导航数组
+    floorList: [] // 楼层数组
   },
 
   onLoad: function() {
     // 发送请求
     this.getSwiper() // 获取轮播图
     this.getNav() // 获取导航
-
+    this.getFloor() // 楼层
   },
 
   async getSwiper() {
@@ -34,6 +35,13 @@ Page({
     const { data } = await nav()
     this.setData({
       navList: data.message
+    })
+  },
+
+  async getFloor() {
+    const { data } = await floor()
+    this.setData({
+      floorList: data.message
     })
   },
 

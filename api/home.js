@@ -15,3 +15,11 @@ export const nav = () => {
     method: 'GET'
   })
 }
+
+// 楼层数据
+export const floor = () => {
+  return requsrt({
+    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata',
+    method: 'GET'
+  })
+}
