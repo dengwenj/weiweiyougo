@@ -3,7 +3,7 @@ import requsrt from '../request/request'
 // 获取轮播图列表
 export const swiper = () => {
   return requsrt({
-    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata',
+    url: '/home/swiperdata',
     method: 'GET'
   })
 }
@@ -11,7 +11,7 @@ export const swiper = () => {
 // 导航数据
 export const nav = () => {
   return requsrt({
-    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/catitems',
+    url: '/home/catitems',
     method: 'GET'
   })
 }
@@ -19,7 +19,7 @@ export const nav = () => {
 // 楼层数据
 export const floor = () => {
   return requsrt({
-    url: 'https://api-hmugo-web.itheima.net/api/public/v1/home/floordata',
+    url: '/home/floordata',
     method: 'GET'
   })
 }
