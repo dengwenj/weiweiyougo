@@ -4,21 +4,25 @@
   display: flex;
   border-bottom: 1px solid #ccc;
 }
+
 .zh-item .left {
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 2;
 }
+
 .zh-item .left .image {
-  width: 80%;
+  width: 65%;
 }
+
 .zh-item .right {
   flex: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
+
 .zh-item .right .text {
   font-size: 28rpx;
   overflow: hidden;
@@ -27,10 +31,12 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
 .zh-item .right .money {
   color: #db3a3a;
   font-size: 32rpx;
 }
+
 .xl,
 .jg {
   display: flex;

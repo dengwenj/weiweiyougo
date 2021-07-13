@@ -1,8 +1,8 @@
-import requsrt from "../request/request"
+import request from "../request/request"
 
 // 商品分类
 export const getCategory = () => {
-  return requsrt({
+  return request({
     url: '/categories',
     method: 'GET'
   })

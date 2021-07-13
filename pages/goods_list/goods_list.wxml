@@ -1,16 +1,16 @@
 <SearchInput />
 <Tabs tabs="{{ tabs }}" binditemTap="ItemTap">
   <view class="zh" wx:if="{{ tabs[0].isActive }}">
-    <view class="zh-item">
+    <view class="zh-item" wx:for="{{ goodsList }}" wx:key="goods_id">
       <!-- 左边图片 -->
       <view class="left">
-        <image class="image" src="https://api-hmugo-web.itheima.net/pyg/banner1.png" mode="widthFix"></image>
+        <image class="image" src="{{ item.goods_small_logo }}" mode="widthFix"></image>
       </view>
       <!-- /左边图片 -->
       <!-- 右边的内容 -->
       <view class="right">
-        <text class="text">丝扣法兰我领了登录发发发发发群群反反复复我单位了萨菲罗斯了看得到发发发</text>
-        <text class="money">￥3999</text>
+        <text class="text">{{ item.goods_name }}</text>
+        <text class="money">￥{{ item.goods_price }}</text>
       </view>
       <!-- /右边的内容 -->
     </view>
