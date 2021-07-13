@@ -9,7 +9,8 @@ Page({
   data: {
     leftMenuList: [], // 左侧的菜单数据
     rightContent: [], // 右侧的商品数据
-    isActive: 0 // 点击的激活
+    isActive: 0, // 点击的激活
+    scrollTop: 0 // 每次点击左侧的时候右侧的内容回到顶部显示
   },
 
   // 接口的返回数据
@@ -20,7 +21,7 @@ Page({
    */
   onLoad: function() {
     /* 
-      使用缓存技术
+      使用缓存技术  提高性能
       1 先判断本地存储中有没有旧的数据
       2 没有旧的数据 直接发送请求
       3 有旧的数据 同时旧的数据没有过期 就使用 本地存储中的旧数据
@@ -74,7 +75,8 @@ Page({
     const rightContent = this.Cates[index].children
     this.setData({
       isActive: index,
-      rightContent
+      rightContent,
+      scrollTop: 0 // 点击了就回到顶部显示
     })
   }
 

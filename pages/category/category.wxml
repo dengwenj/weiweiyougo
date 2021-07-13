@@ -9,7 +9,7 @@
     </scroll-view>
     <!-- /左侧菜单 -->
     <!-- 右侧商品内容 -->
-    <scroll-view scroll-y class="right_content">
+    <scroll-view scroll-y scroll-top="{{ scrollTop }}" class="right_content">
       <view class="waiceng">
         <view class="list" wx:for="{{ rightContent }}" wx:for-item="item2" wx:for-index="index2" wx:key="cat_id">
           <view class="biaoti">
