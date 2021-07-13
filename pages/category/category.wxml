@@ -3,7 +3,7 @@
   <view class="cates_cotainer">
     <!-- 左侧菜单 -->
     <scroll-view scroll-y class="left_menu">
-      <view class="title {{ index1 === 0 ? 'active':'' }}" wx:for="{{ leftMenuList }}" wx:for-index="index1" wx:for-item="item1" wx:key="*this">
+      <view class="title {{ index1 === isActive ? 'active':'' }}" wx:for="{{ leftMenuList }}" wx:for-index="index1" wx:for-item="item1" wx:key="*this" bindtap="handleTap" data-index="{{ index1 }}">
         {{item1}}
       </view>
     </scroll-view>

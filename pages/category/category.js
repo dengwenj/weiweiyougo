@@ -25,15 +25,28 @@ Page({
 
   async _getCategory() {
     const { data } = await getCategory()
+    console.log(data);
     this.Cates = data.message
 
     const leftMenuList = this.Cates.map((item) => item.cat_name)
-    this.setData({
-      leftMenuList
-    })
-
     const rightContent = this.Cates[0].children
     this.setData({
+      leftMenuList,
+      rightContent
+    })
+  },
+
+  // 点击左侧
+  handleTap(e) {
+    /* 
+      1 获取被点击的标题身上的索引
+      2 给 data 中的 isActive 赋值就可以了
+      3 根据不同的索引来渲染右侧的商品内容
+    */
+    const { index } = e.currentTarget.dataset
+    const rightContent = this.Cates[index].children
+    this.setData({
+      isActive: index,
       rightContent
     })
   }
