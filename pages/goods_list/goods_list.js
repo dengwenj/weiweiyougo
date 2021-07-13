@@ -32,6 +32,9 @@ Page({
     pagesize: 10
   },
 
+  // 总条数
+  total: 0,
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -58,8 +61,47 @@ Page({
 
   async _goodsSearch(data) {
     const res = await goodsSearch(data)
+    this.total = res.data.message.total
+
     this.setData({
-      goodsList: res.data.message.goods
+      goodsList: [...this.data.goodsList, ...res.data.message.goods] // 合并数组 下拉加载很多还有数据
     })
+  },
+
+  // 上拉加载触底生命周期函数
+  onReachBottom() {
+    /* 
+      1 用户上滑页面 滚动条触底 开始加载下一页
+        判断还有没有下一页数据
+          1 获取到总页数 只有总条数
+          总页数 = Math.ceil(总条数 / 页容量 pagesize)
+          2 获取到当前的页码 pagenum
+          3 判断一下 当前的页码是否大于等于总页数  大于了表述没有数据了
+      2 没有下一页数据 弹出一个提示
+      3 有下一页数据加载下一页数据
+    */
+    // 每次触底了就提醒用户加载中
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 800
+    })
+
+    //  每次触底了就加一
+    this.queryParams.pagenum = this.queryParams.pagenum + 1;
+
+    // 总页数
+    const pages = Math.ceil(this.total / this.queryParams.pagesize) // 数组内置对象
+    if (this.queryParams.pagenum > pages) {
+      // 表示没有数据
+      return wx.showToast({
+        title: '数据加载完啦~',
+        icon: 'none',
+        duration: 2500
+      })
+    }
+
+    // 发送请求
+    this._goodsSearch(this.queryParams)
   }
 })
