@@ -1,31 +1,55 @@
 <view class="container">
-  <!-- 轮播图 -->
-  <view class="detail_swiper">
-    <swiper autoplay indicator-dots interval="3000" circular>
-      <swiper-item class="detail_swiper_item" wx:for="{{ goodsDetail.pics }}" wx:key="pics_id" bindtap="handleTap" data-index="{{ index }}">
-        <image class="swiper-image" src="{{ item.pics_mid }}" mode="widthFix"></image>
-      </swiper-item>
-    </swiper>
-  </view>
-  <!-- /轮播图 -->
-  <!-- 详情信息 -->
-  <view class="info">
-    <view class="price">￥{{ goodsDetail.goods_price }}</view>
-    <view class="bottom">
-      <view class="left">
-        <text class="goods_name">{{ goodsDetail.goods_name }}</text>
-      </view>
-      <view class="right">
-        <text class="iconfont icon-shoucang"></text>
-        <text class="shoucang">收藏</text>
+  <view class="fiexd">
+    <!-- 轮播图 -->
+    <view class="detail_swiper">
+      <swiper autoplay indicator-dots interval="3000" circular>
+        <swiper-item class="detail_swiper_item" wx:for="{{ goodsDetail.pics }}" wx:key="pics_id" bindtap="handleTap" data-index="{{ index }}">
+          <image class="swiper-image" src="{{ item.pics_mid }}" mode="widthFix"></image>
+        </swiper-item>
+      </swiper>
+    </view>
+    <!-- /轮播图 -->
+    <!-- 详情信息 -->
+    <view class="info">
+      <view class="price">￥{{ goodsDetail.goods_price }}</view>
+      <view class="bottom">
+        <view class="left">
+          <text class="goods_name">{{ goodsDetail.goods_name }}</text>
+        </view>
+        <view class="right">
+          <text class="iconfont icon-shoucang"></text>
+          <text class="shoucang">收藏</text>
+        </view>
       </view>
     </view>
+    <!-- /详情信息 -->
+    <!-- 图文详情 -->
+    <view class="tuwen">
+      <view class="title">图文详情</view>
+      <rich-text class="" nodes="{{ goodsDetail.goods_introduce }}"></rich-text>
+    </view>
+    <!-- /图文详情 -->
   </view>
-  <!-- /详情信息 -->
-  <!-- 图文详情 -->
-  <view class="tuwen">
-    <view class="title">图文详情</view>
-    <rich-text class="" nodes="{{ goodsDetail.goods_introduce }}"></rich-text>
+  <!-- 底部布局 -->
+  <view class="bottombuju">
+    <view class="kffxgwc">
+      <view class="sahngxia">
+        <icon class="iconfont icon-kefu"></icon>
+        <text>联系客服</text>
+      </view>
+      <view class="sahngxia">
+        <icon class="iconfont icon-yixianshi-1"></icon>
+        <text>分享</text>
+      </view>
+      <view class="sahngxia">
+        <icon class="iconfont icon-gouwuche"></icon>
+        <text>分享</text>
+      </view>
+    </view>
+    <view class="jrgwcljgm">
+      <text class="jr">加入购物车</text>
+      <text class="lj">立即购买</text>
+    </view>
   </view>
-  <!-- /图文详情 -->
+  <!-- /底部布局 -->
 </view>

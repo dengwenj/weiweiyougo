@@ -1,54 +1,106 @@
-.detail_swiper {
-  swiper {
-    height: 65vw;
-    text-align: center;
-    .detail_swiper_item{
-      .swiper-image{
-        width: 60%;
+.fiexd{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 90rpx;
+  overflow-y: auto;
+  .detail_swiper {
+    swiper {
+      height: 65vw;
+      text-align: center;
+      .detail_swiper_item{
+        .swiper-image{
+          width: 60%;
+        }
       }
     }
   }
-}
-.info{
-  margin-top: 20rpx;
-  .price{
-    margin-left: 10rpx;
-    margin-bottom: 10rpx;
-    color: rgb(212, 58, 58);
-    font-size: 34rpx;
-  }
-  .bottom{
-    display: flex;
-    padding: 15rpx;
-    border-top: 15rpx solid #eee;
-    border-bottom: 15rpx solid #eee;
-    .left{
-      flex: 5;
-      font-size: 28rpx;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display:-webkit-box; //作为弹性伸缩盒子模型显示。
-      -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
-      -webkit-line-clamp:2; //显示的行
-      .goods_name{}
+  .info{
+    margin-top: 20rpx;
+    .price{
+      margin-left: 10rpx;
+      margin-bottom: 10rpx;
+      color: rgb(212, 58, 58);
+      font-size: 34rpx;
     }
-    .right{
+    .bottom{
+      display: flex;
+      padding: 15rpx;
+      border-top: 15rpx solid #eee;
+      border-bottom: 15rpx solid #eee;
+      .left{
+        flex: 5;
+        font-size: 28rpx;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display:-webkit-box; //作为弹性伸缩盒子模型显示。
+        -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
+        -webkit-line-clamp:2; //显示的行
+        .goods_name{}
+      }
+      .right{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        border-left: 1px solid #000;
+        text{
+          font-size: 26rpx;
+        }
+      }
+    }
+  }
+  .tuwen{
+    .title{
+      color: var(--themeColor);
+      font-size: 36rpx;
+      padding: 15rpx;
+    }
+  }
+}
+.bottombuju{
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 90rpx;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  .kffxgwc{
+    flex: 1;
+    display: flex;
+    .sahngxia{
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
-      border-left: 1px solid #000;
-      text{
-        font-size: 26rpx;
-      }
+      font-size: 24rpx;
+      icon{}
+      text{}
     }
   }
-}
-.tuwen{
-  .title{
-    color: var(--themeColor);
-    font-size: 36rpx;
-    padding: 15rpx;
+  .jrgwcljgm{
+    flex: 1;
+    display: flex;
+    .jr{
+      height: 100%;
+      flex: 1;
+      text-align: center;
+      line-height: 90rpx;
+      background-color: #ffa300;
+      color: #fff;
+    }
+    .lj{
+      height: 100%;
+      flex: 1;
+      text-align: center;
+      line-height: 90rpx;
+      background-color: #f6554d;
+      color: #fff;
+    }
   }
 }
