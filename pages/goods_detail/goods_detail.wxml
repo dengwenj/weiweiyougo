@@ -49,7 +49,7 @@
       </navigator>
     </view>
     <view class="jrgwcljgm">
-      <text class="jr">加入购物车</text>
+      <text class="jr" bindtap="handleGwcTap">加入购物车</text>
       <text class="lj">立即购买</text>
     </view>
   </view>
