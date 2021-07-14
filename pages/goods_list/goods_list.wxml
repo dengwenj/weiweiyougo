@@ -1,7 +1,7 @@
 <SearchInput />
 <Tabs tabs="{{ tabs }}" binditemTap="ItemTap">
   <view class="zh" wx:if="{{ tabs[0].isActive }}">
-    <view class="zh-item" wx:for="{{ goodsList }}" wx:key="goods_id">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{ item.goods_id }}" class="zh-item" wx:for="{{ goodsList }}" wx:key="goods_id">
       <!-- 左边图片 -->
       <view class="left">
         <image class="image" src="{{ item.goods_small_logo }}" mode="widthFix"></image>
@@ -13,7 +13,7 @@
         <text class="money">￥{{ item.goods_price }}</text>
       </view>
       <!-- /右边的内容 -->
-    </view>
+    </navigator>
   </view>
   <text class="xl" wx:elif="{{ tabs[1].isActive }}">开发中...</text>
   <text class="jg" wx:else>开发中...</text>
