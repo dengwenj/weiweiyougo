@@ -36,15 +36,17 @@
       <view class="sahngxia">
         <icon class="iconfont icon-kefu"></icon>
         <text>联系客服</text>
+        <button open-type="contact"></button>
       </view>
       <view class="sahngxia">
         <icon class="iconfont icon-yixianshi-1"></icon>
         <text>分享</text>
+        <button open-type="share">11</button>
       </view>
-      <view class="sahngxia">
+      <navigator url="/pages/cart/cart" open-type="switchTab" class="sahngxia">
         <icon class="iconfont icon-gouwuche"></icon>
-        <text>分享</text>
-      </view>
+        <text>购物车</text>
+      </navigator>
     </view>
     <view class="jrgwcljgm">
       <text class="jr">加入购物车</text>
