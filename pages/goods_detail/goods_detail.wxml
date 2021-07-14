@@ -2,7 +2,7 @@
   <!-- 轮播图 -->
   <view class="detail_swiper">
     <swiper autoplay indicator-dots interval="3000" circular>
-      <swiper-item class="detail_swiper_item" wx:for="{{ goodsDetail.pics }}" wx:key="pics_id">
+      <swiper-item class="detail_swiper_item" wx:for="{{ goodsDetail.pics }}" wx:key="pics_id" bindtap="handleTap" data-index="{{ index }}">
         <image class="swiper-image" src="{{ item.pics_mid }}" mode="widthFix"></image>
       </swiper-item>
     </swiper>
