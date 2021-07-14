@@ -5,3 +5,43 @@
 .detail_swiper swiper .detail_swiper_item .swiper-image {
   width: 60%;
 }
+.info {
+  margin-top: 20rpx;
+}
+.info .price {
+  margin-left: 10rpx;
+  margin-bottom: 10rpx;
+  color: #d43a3a;
+  font-size: 34rpx;
+}
+.info .bottom {
+  display: flex;
+  padding: 15rpx;
+  border-top: 15rpx solid #eee;
+  border-bottom: 15rpx solid #eee;
+}
+.info .bottom .left {
+  flex: 5;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.info .bottom .right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 1px solid #000;
+}
+.info .bottom .right text {
+  font-size: 26rpx;
+}
+.tuwen .title {
+  color: var(--themeColor);
+  font-size: 36rpx;
+  padding: 15rpx;
+}
