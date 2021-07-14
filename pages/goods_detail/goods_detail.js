@@ -22,7 +22,13 @@ Page({
     const res = await getGoodsDetail({ goods_id })
     const goodsDetail = res.data.message
     this.setData({
-      goodsDetail
+      goodsDetail: {
+        //小程序中建议 data 里面只存放标签中要使用的数据
+        goods_price: goodsDetail.goods_price,
+        goods_name: goodsDetail.goods_name,
+        goods_introduce: goodsDetail.goods_introduce.replace(/webp/g, 'jpg'),
+        pics: goodsDetail.pics
+      }
     })
   }
 })
