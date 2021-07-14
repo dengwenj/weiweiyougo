@@ -69,6 +69,9 @@ Page({
 
     // 下拉刷新数据加载了 就关闭下拉加载
     wx.stopPullDownRefresh()
+
+    // 关闭loading
+    wx.hideLoading()
   },
 
   // 上拉加载触底生命周期函数
@@ -84,10 +87,9 @@ Page({
       3 有下一页数据加载下一页数据
     */
     // 每次触底了就提醒用户加载中
-    wx.showToast({
-      title: '加载中...',
-      icon: 'loading',
-      duration: 800
+    wx.showLoading({
+      title: '加载中',
+      mask: true
     })
 
     //  每次触底了就加一
