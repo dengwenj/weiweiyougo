@@ -41,7 +41,7 @@
 <!-- 底部工具栏 -->
 <view class="bottom">
   <checkbox-group bindchange="">
-    <checkbox class="" value="" color="var(--themeColor)">全选</checkbox>
+    <checkbox checked="{{ allChecked }}" color="var(--themeColor)">全选</checkbox>
   </checkbox-group>
   <view class="centent">
     <view>
