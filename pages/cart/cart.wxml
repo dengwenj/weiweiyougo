@@ -14,3 +14,44 @@
     </view>
   </view>
 </view>
+<!-- 购物车内容 -->
+<view class="xm">
+  <view class="title">购物车</view>
+  <view class="content">
+    <checkbox-group bindchange="">
+      <checkbox class="" value="" color="var(--themeColor)"></checkbox>
+    </checkbox-group>
+    <navigator class="image">
+      <image mode="widthFix" src="https://api-hmugo-web.itheima.net/pyg/banner3.png"></image>
+    </navigator>
+    <view class="text">
+      <view class="shangmian">即可发货我完全好得很分为服务无穷大所得反反复复到的无我的文档奇偶I舞动奇迹</view>
+      <view class="xiamian">
+        <view class="price">￥8888</view>
+        <view class="san">
+          <text class="jian">-</text>
+          <text class="num">8</text>
+          <text class="jia">+</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- /购物车内容 -->
+<!-- 底部工具栏 -->
+<view class="bottom">
+  <checkbox-group bindchange="">
+    <checkbox class="" value="" color="var(--themeColor)">全选</checkbox>
+  </checkbox-group>
+  <view class="centent">
+    <view>
+      <text class="heji">合计:</text>
+      <text class="money">￥488228</text>
+    </view>
+    <text class="yunfei">包含运费</text>
+  </view>
+  <view class="jiesuan">
+    <text>结算(2)</text>
+  </view>
+</view>
+<!-- /底部工具栏 -->
