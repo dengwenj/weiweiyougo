@@ -46,12 +46,12 @@
   <view class="centent">
     <view>
       <text class="heji">合计:</text>
-      <text class="money">￥488228</text>
+      <text class="money">￥{{ zjg }}</text>
     </view>
     <text class="yunfei">包含运费</text>
   </view>
   <view class="jiesuan">
-    <text>结算(2)</text>
+    <text>结算({{ zsl }})</text>
   </view>
 </view>
 <!-- /底部工具栏 -->
