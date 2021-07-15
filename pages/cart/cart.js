@@ -1,4 +1,4 @@
-// pages/cart/cart.js
+import { showModal } from "../../utils/asyncwx"
 Page({
 
   /**
@@ -152,15 +152,40 @@ Page({
   },
 
   // 当点击减时
-  hanldTapLess(e) {
+  async hanldTapLess(e) {
     const { indey } = e.currentTarget.dataset
     const { cart } = this.data
     let zjg = 0
     let zsl = 0
 
-    if (cart[indey].num > 1) {
-      cart[indey].num--
+    // 删除商品
+    if (cart[indey].num <= 1) {
+      // 封装的 Promise 用的 async
+      const res = await showModal('是否删除该商品')
+      if (res.confirm) {
+        // 当点击确定时 就删除该商品 就从 本地存储中移除就行了  不能直接删除 cart
+        cart.splice(indey, 1) // 要这样删  
+
+        cart.forEach(item => {
+          if (item.checked) {
+            zjg += item.goods_price * item.num
+            zsl += item.num
+          }
+        })
+
+        this.setData({
+          cart,
+          zjg,
+          zsl
+        })
+
+        // 然后在重新设置本地存储
+        wx.setStorageSync('cart', cart)
+      }
+      return
     }
+
+    cart[indey].num--;
 
     // 让总数量和总价格重新算
     cart.forEach(item => {

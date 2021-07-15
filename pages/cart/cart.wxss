@@ -126,3 +126,9 @@ Page {
 .bottom .jiesuan text {
   color: #fff;
 }
+.meiyou {
+  font-size: 40rpx;
+  color: var(--themeColor);
+  text-align: center;
+  margin-top: 40rpx;
+}
