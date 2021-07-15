@@ -49,9 +49,6 @@ Page({
         zjg += item.goods_price * item.num
         zsl += item.num
       }
-      this.setData({
-
-      })
     })
 
     // 把地址赋值给 data 中
@@ -64,6 +61,97 @@ Page({
     })
   },
 
+  // 当商品复选框改变的时候
+  handleChangeItem(e) {
+    /* 
+      商品的选中
+      1 获取到修改的商品对象
+      2 商品对象的选中状态 取反
+      3 重新填充回 data 中和缓存中
+      4 重新计算全选 总价格 总数量 ...
+      事件源中 e.detail.value.length 不为 0 说明是勾选状态 
+      事件源中 e.detail.value.length 为 0 说明是没勾选状态 
+    */
+    // console.log(e);
+    const { index } = e.currentTarget.dataset
+    const { cart } = this.data
+    let { allChecked } = this.data
+    if (!e.detail.value.length) {
+      cart[index].checked = !cart[index].checked
+
+      // 只要有一个没勾上 全选就没有勾上
+      allChecked = false
+    } else {
+      cart[index].checked = !cart[index].checked
+    }
+
+    // 设置回本地存储中
+    wx.setStorageSync('cart', cart)
+
+    // 重新计算全选 总价格 总数量 ...
+    let zjg = 0
+    let zsl = 0
+    cart.forEach(item => {
+      if (item.checked) {
+        zjg += item.goods_price * item.num
+        zsl += item.num
+      }
+    })
+
+    // 判断 checked 是否全部为 true  全部为 true 就把 全选勾上
+    allChecked = cart.length ? cart.every(item => item.checked) : false
+
+    // 把地址赋值给 data 中
+    this.setData({
+      // cart,
+      zjg,
+      zsl,
+      allChecked
+    })
+  },
+
+  handleChangeAllChecked(e) {
+    const { cart } = this.data
+    let { zjg } = this.data
+    let { zsl } = this.data
+    if (!e.detail.value.length) {
+      // !e.detail.value.length 说明没有勾上
+      cart.forEach(item => {
+        // 都把 checked 变成 false
+        item.checked = false
+      })
+      zjg = 0
+      zsl = 0
+    } else {
+      console.log(cart);
+      // 勾上了全选
+      cart.forEach(item => {
+        // 这里是如果每一项勾上了就不再加上那一项了，加的是没有勾上的 这样才没有加重复
+        if (!item.checked) {
+          // 把全部商品的总价格和总数量渲染在页面中
+          zjg += item.goods_price * item.num
+          zsl += item.num
+        }
+        // 都把 checked 变成 true
+        item.checked = true
+
+        // zjg += item.goods_price * item.num 这样是错的 把全部的都加上了 加的是没有勾上的 这样加重复了
+        // zsl += item.num
+      })
+    }
+
+    // 重新设置本次存储
+    wx.setStorageSync('cart', cart)
+
+    // 赋值给 data
+    this.setData({
+      cart,
+      zjg,
+      zsl
+    })
+  },
+
+  // 获取用户的收货地址
   handleChooseAddress() {
     // 调用小程序内置 api 获取用户的收货地址
     wx.chooseAddress({
