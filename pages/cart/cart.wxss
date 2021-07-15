@@ -1,1 +1,18 @@
-/* pages/cart/cart.wxss */
+.revice_address_row .address_btn {
+  padding: 20rpx;
+}
+.revice_address_row .address_btn button {
+  width: 60%;
+}
+.revice_address_row .info {
+  display: flex;
+  padding: 20rpx;
+  font-size: 26rpx;
+}
+.revice_address_row .info .left {
+  flex: 5;
+}
+.revice_address_row .info .right {
+  flex: 3;
+  text-align: right;
+}
