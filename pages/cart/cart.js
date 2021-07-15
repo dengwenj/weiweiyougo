@@ -232,6 +232,30 @@ Page({
     wx.setStorageSync('cart', cart)
   },
 
+  // 点击结算
+  handlePay() {
+    // 1 判断有没有收货地址信息 判断用户有没有选购商品
+    if (!wx.getStorageSync('address') || this.data.cart.length === 0) {
+      wx.showToast({
+        title: `${!wx.getStorageSync('address') ? '您还没有填写收货地址':'您还没有选购商品'}`,
+        duration: 1500,
+        icon: 'none',
+        mask: true,
+      })
+      return
+    }
+    // 3 经过以上的验证 跳转到 支付页面
+    wx.navigateTo({
+      url: '/pages/pay/pay',
+      success: (result) => {
+        console.log(1);
+      },
+      fail: () => {},
+      complete: () => {}
+    });
+
+  },
+
   // 获取用户的收货地址
   handleChooseAddress() {
     // 调用小程序内置 api 获取用户的收货地址
