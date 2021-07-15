@@ -151,6 +151,62 @@ Page({
     })
   },
 
+  // 当点击减时
+  hanldTapLess(e) {
+    const { indey } = e.currentTarget.dataset
+    const { cart } = this.data
+    let zjg = 0
+    let zsl = 0
+
+    if (cart[indey].num > 1) {
+      cart[indey].num--
+    }
+
+    // 让总数量和总价格重新算
+    cart.forEach(item => {
+      if (item.checked) {
+        zjg += item.goods_price * item.num
+        zsl += item.num
+      }
+    })
+
+    this.setData({
+      cart,
+      zjg,
+      zsl
+    })
+
+    // 重新存储到本地存储
+    wx.setStorageSync('cart', cart)
+  },
+
+  // 当点击加时
+  handleTapAdd(e) {
+    const { indez } = e.currentTarget.dataset
+    const { cart } = this.data
+    let zjg = 0
+    let zsl = 0
+
+    cart[indez].num++;
+
+    // 让总数量和总价格重新算
+    cart.forEach(item => {
+      if (item.checked) {
+        zjg += item.goods_price * item.num
+        zsl += item.num
+      }
+    })
+
+    this.setData({
+      cart,
+      zjg,
+      zsl
+    })
+
+    // 重新存储到本地存储
+    wx.setStorageSync('cart', cart)
+  },
+
   // 获取用户的收货地址
   handleChooseAddress() {
     // 调用小程序内置 api 获取用户的收货地址

@@ -29,9 +29,9 @@
       <view class="xiamian">
         <view class="price">￥{{ item.goods_price }}</view>
         <view class="san">
-          <text class="jian">-</text>
+          <text class="jian" bindtap="hanldTapLess" data-indey="{{ index }}">-</text>
           <text class="num">{{ item.num }}</text>
-          <text class="jia">+</text>
+          <text class="jia" bindtap="handleTapAdd" data-indez="{{ index }}">+</text>
         </view>
       </view>
     </view>
