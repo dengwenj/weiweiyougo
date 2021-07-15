@@ -47,6 +47,9 @@ Page {
 }
 .xm .content .text {
   flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .xm .content .text .shangmian {
   color: #666;
@@ -59,7 +62,6 @@ Page {
 }
 .xm .content .text .xiamian {
   display: flex;
-  margin-top: 20rpx;
 }
 .xm .content .text .xiamian .price {
   flex: 1;

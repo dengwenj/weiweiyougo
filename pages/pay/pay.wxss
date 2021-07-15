@@ -1,1 +1,134 @@
-/* pages/pay/pay.wxss */
+Page {
+  padding-bottom: 90rpx;
+}
+.revice_address_row .address_btn {
+  padding: 20rpx;
+}
+.revice_address_row .address_btn button {
+  width: 60%;
+}
+.revice_address_row .info {
+  display: flex;
+  padding: 20rpx;
+  font-size: 26rpx;
+}
+.revice_address_row .info .left {
+  flex: 5;
+}
+.revice_address_row .info .right {
+  flex: 3;
+  text-align: right;
+}
+.xm .title {
+  padding: 20rpx;
+  border-top: 1px solid var(--themeColor);
+  border-bottom: 1px solid var(--themeColor);
+}
+.xm .content {
+  display: flex;
+  margin-top: 20rpx;
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid #eee;
+}
+.xm .content checkbox-group {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xm .content .image {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.xm .content .image image {
+  width: 80%;
+}
+.xm .content .text {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.xm .content .text .shangmian {
+  color: #666;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.xm .content .text .xiamian {
+  display: flex;
+}
+.xm .content .text .xiamian .price {
+  flex: 1;
+  color: #db3232;
+}
+.xm .content .text .xiamian .san {
+  flex: 1;
+  text-align: right;
+}
+.xm .content .text .xiamian .san .jian {
+  border: 1px solid #ccc;
+  padding: 0 10rpx;
+}
+.xm .content .text .xiamian .san .num {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+}
+.xm .content .text .xiamian .san .jia {
+  border: 1px solid #ccc;
+  padding: 0 10rpx;
+}
+.bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 90rpx;
+  display: flex;
+  border: 1px solid #eee;
+  background-color: #fff;
+}
+.bottom checkbox-group {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10rpx;
+  font-size: 24rpx;
+}
+.bottom .centent {
+  flex: 4;
+  text-align: right;
+}
+.bottom .centent view {
+  margin-top: 5rpx;
+}
+.bottom .centent view .money {
+  margin: 0 10rpx;
+  color: #db3232;
+  font-size: 32rpx;
+}
+.bottom .centent .yunfei {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.bottom .jiesuan {
+  flex: 2;
+  background-color: #db3232;
+  text-align: center;
+  line-height: 90rpx;
+}
+.bottom .jiesuan text {
+  color: #fff;
+}
+.meiyou {
+  font-size: 40rpx;
+  color: var(--themeColor);
+  text-align: center;
+  margin-top: 100rpx;
+}

@@ -247,13 +247,7 @@ Page({
     // 3 经过以上的验证 跳转到 支付页面
     wx.navigateTo({
       url: '/pages/pay/pay',
-      success: (result) => {
-        console.log(1);
-      },
-      fail: () => {},
-      complete: () => {}
-    });
-
+    })
   },
 
   // 获取用户的收货地址
