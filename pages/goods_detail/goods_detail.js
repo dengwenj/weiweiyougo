@@ -67,6 +67,10 @@ Page({
     if (index === -1) {
       // 等于 -1 说明没有找到 就说明 里面一次就没有 就添加商品 在添加一个属性 num
       this.goodsXQ.num = 1
+
+      // 在添加一个 选中状态
+      this.goodsXQ.checked = true
+
       cart.push(this.goodsXQ)
     } else {
       // 说明找到了 说明至少已经添加过一次了  就让 num 属性 ++

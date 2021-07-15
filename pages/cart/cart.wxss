@@ -77,6 +77,7 @@ Page {
 }
 .xm .content .text .xiamian .san .num {
   margin: 0 20rpx;
+  font-size: 26rpx;
 }
 .xm .content .text .xiamian .san .jia {
   border: 1px solid #ccc;

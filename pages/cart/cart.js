@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dizhi: {} // 获取用户地址
+    dizhi: {}, // 获取用户地址
+    cart: [] // 获取商品详情 加入的购物车
   },
 
   /**
@@ -21,9 +22,13 @@ Page({
       dizhi.all = `${dizhi.provinceName}${dizhi.cityName}${dizhi.countyName}${dizhi.detailInfo}`
     }
 
+    // 获取商品详情
+    const cart = wx.getStorageSync('cart')
+
     // 把地址赋值给 data 中
     this.setData({
-      dizhi
+      dizhi,
+      cart
     })
   },
 
