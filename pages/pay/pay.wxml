@@ -37,7 +37,7 @@
     </view>
     <text class="yunfei">包含运费</text>
   </view>
-  <view class="jiesuan">
+  <view class="jiesuan" bindtap="handleTapPay">
     <text>支付({{ zsl }})</text>
   </view>
 </view>

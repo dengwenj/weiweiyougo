@@ -1,1 +1,1 @@
-<view>auth</view>
+<button type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleUserInfo">获取授权</button>

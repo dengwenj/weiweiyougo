@@ -50,5 +50,24 @@ Page({
       zsl,
       newCart
     })
+  },
+
+  // 点击支付
+  handleTapPay() {
+    /* 
+      1 先判断缓存中有没有 token
+      2 没有 跳转到授权页面 进行获取 token
+      3 有 token 进行下面的步骤 
+    */
+    const token = wx.getStorageSync('token')
+    if (!token) {
+      wx.navigateTo({
+        url: '/pages/auth/auth',
+      })
+
+      // 禁止代码向下执行
+      return
+    }
+    console.log('有 token');
   }
 })
