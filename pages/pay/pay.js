@@ -1,4 +1,6 @@
-import { cjOrder } from "../../api/dingdan"
+import { cjOrder, chkOrder } from "../../api/dingdan"
+import { getPayParams } from "../../api/pay"
+import { requestPayment } from "../../utils/asyncwx"
 
 Page({
 
@@ -56,46 +58,69 @@ Page({
 
   // 点击支付
   async handleTapPay() {
-    /* 
+    try {
+      /* 
       1 先判断缓存中有没有 token
       2 没有 跳转到授权页面 进行获取 token
       3 有 token 进行下面的步骤 
     */
-    const token = wx.getStorageSync('token')
-    if (!token) {
+      const token = wx.getStorageSync('token')
+      if (!token) {
+        wx.navigateTo({
+          url: '/pages/auth/auth',
+        })
+
+        // 禁止代码向下执行
+        return
+      }
+
+      // 创建订单 获取订单编号
+      const header = {
+        Authorization: token
+      }
+
+      // 订单数组
+      const { newCart } = this.data
+      const goods = []
+      newCart.forEach(item => {
+        goods.push({
+          goods_id: item.goods_id,
+          goods_number: item.num,
+          goods_price: item.goods_price
+        })
+      })
+
+      const data = {
+        order_price: this.data.zjg,
+        consignee_addr: this.data.dizhi.all,
+        goods
+      }
+
+      // 发送请求
+      const res = await cjOrder(header, data)
+      const { order_number } = res.data.message // 获取订单编号
+
+      // 发送请求 准备预支付 获取支付参数
+      const res1 = await getPayParams(header, { order_number })
+      const { pay } = res1.data.message
+
+      // 发起微信支付  APPID 要一致  wx62cf7cd6483e44af
+      await requestPayment(pay)
+
+      // 查询后台 订单状态
+      const res2 = await chkOrder(header, { order_number })
+
+      // 支付成功 跳转到订单页面
       wx.navigateTo({
-        url: '/pages/auth/auth',
+        url: '/pages/order/order'
       })
-
-      // 禁止代码向下执行
-      return
-    }
-
-    // 创建订单 获取订单编号
-    const header = {
-      Authorization: token
-    }
-
-    // 订单数组
-    const { newCart } = this.data
-    const goods = []
-    newCart.forEach(item => {
-      goods.push({
-        goods_id: item.goods_id,
-        goods_number: item.num,
-        goods_price: item.goods_price
+    } catch (error) {
+      wx.showToast({
+        title: '支付失败，因为不是企业账号，个人账号不能发起微信支付，希望理解！',
+        icon: 'none',
+        duration: 4500,
+        mask: true
       })
-    })
-
-    const data = {
-      order_price: this.data.zjg,
-      consignee_addr: this.data.dizhi.all,
-      goods
     }
-
-    // 发送请求
-    const res = await cjOrder(header, data)
-    const { order_number } = res.data.message // 获取订单编号
-    console.log(order_number);
   }
 })

@@ -26,3 +26,19 @@ export const login = () => {
     })
   })
 }
+
+// 发起微信支付
+export const requestPayment = pay => {
+  return new Promise((resolve, reject) => {
+    wx.requestPayment({
+      ...pay,
+      success: (result) => {
+        resolve(result)
+        console.log(1);
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })
+  })
+}

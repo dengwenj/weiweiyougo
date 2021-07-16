@@ -9,3 +9,13 @@ export const cjOrder = (header, data) => {
     data
   })
 }
+
+// 查询后台 订单状态
+export const chkOrder = (header, data) => {
+  return request({
+    utl: '/my/orders/chkOrder',
+    method: 'POST',
+    header,
+    data
+  })
+}
