@@ -42,3 +42,18 @@ export const requestPayment = pay => {
     })
   })
 }
+
+// 获取用户个人资料
+export const getUserProfile = () => {
+  return new Promise((resolve, reject) => {
+    wx.getUserProfile({
+      desc: '用户个人资料展示', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
+      success: (res) => {
+        resolve(res)
+      },
+      fail: (err) => {
+        reject(err)
+      }
+    })
+  })
+}
