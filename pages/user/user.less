@@ -1,0 +1,46 @@
+.user-info-warp{
+  height: 45vh;
+  background-color: var(--themeColor);
+  border-bottom-left-radius: 14rpx;
+  border-bottom-right-radius: 14rpx;
+  .user-info{
+    position: relative;  
+    .user-img{
+      width: 100%;
+      filter: blur(10rpx);
+    }
+    .user-imgsm{
+      position: absolute;
+      top: 30%;
+      transform: translateX(-50%);
+      left: 50%;
+      text-align: center;
+      .user-icon{
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 50%;
+      }
+      .user-name{
+        margin-top: 20rpx;
+        color: #fff;
+        font-size: 34rpx;
+      }
+    }
+  }
+  .login{
+    navigator{
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      transform: translateX(-50%);
+      width: 150rpx;
+      height: 70rpx;
+      border: 2px solid #fff;
+      text-align: center;
+      line-height: 60rpx;
+      color: #fff;
+      border-radius: 10rpx;
+      font-size: 36rpx;
+    }
+  }
+}
