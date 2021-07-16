@@ -32,15 +32,15 @@
   <view class="wddd">
     <view class="dingdan">我的订单</view>
     <view class="si">
-      <navigator>
+      <navigator url="/pages/order/order?type=1">
         <view class="iconfont icon-tubiaozhizuomoban icon"></view>
         <view class="text">全部订单</view>
       </navigator>
-      <navigator>
+      <navigator url="/pages/order/order?type=2">
         <view class="iconfont icon-fukuantongzhi icon"></view>
         <view class="text">待付款</view>
       </navigator>
-      <navigator>
+      <navigator url="/pages/order/order?type=3">
         <view class="iconfont icon-receipt-address icon"></view>
         <view class="text">待收货</view>
       </navigator>
