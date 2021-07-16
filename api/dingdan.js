@@ -17,3 +17,12 @@ export const chkOrder = data => {
     data
   })
 }
+
+// 历史订单查询
+export const lshiOrder = data => {
+  return request({
+    url: '/my/orders/all',
+    method: 'GET',
+    data
+  })
+}
