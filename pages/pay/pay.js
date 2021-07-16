@@ -1,3 +1,5 @@
+import { cjOrder } from "../../api/dingdan"
+
 Page({
 
   /**
@@ -53,7 +55,7 @@ Page({
   },
 
   // 点击支付
-  handleTapPay() {
+  async handleTapPay() {
     /* 
       1 先判断缓存中有没有 token
       2 没有 跳转到授权页面 进行获取 token
@@ -68,6 +70,32 @@ Page({
       // 禁止代码向下执行
       return
     }
-    console.log('有 token');
+
+    // 创建订单 获取订单编号
+    const header = {
+      Authorization: token
+    }
+
+    // 订单数组
+    const { newCart } = this.data
+    const goods = []
+    newCart.forEach(item => {
+      goods.push({
+        goods_id: item.goods_id,
+        goods_number: item.num,
+        goods_price: item.goods_price
+      })
+    })
+
+    const data = {
+      order_price: this.data.zjg,
+      consignee_addr: this.data.dizhi.all,
+      goods
+    }
+
+    // 发送请求
+    const res = await cjOrder(header, data)
+    const { order_number } = res.data.message // 获取订单编号
+    console.log(order_number);
   }
 })
