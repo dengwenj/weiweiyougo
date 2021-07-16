@@ -52,10 +52,14 @@ Page({
       // console.log(curPages[curPages.length - 1].options)
     const { type } = curPages[curPages.length - 1].options
 
+    // 根据 type 来决定页面标题的数组元素哪个被激活选中  type = 1 index = 0 这样的关系
+    this.changeTitleByIndex(type - 1)
+
+    // 发送请求
     this._lshiOrder(type)
   },
 
-  // 发送请求 获取历史订单查询
+  // 发送请求 获取历史订单查询  
   async _lshiOrder(type) {
     const res = await lshiOrder({ type })
     const { orders } = res.data.message
@@ -64,9 +68,8 @@ Page({
     })
   },
 
-  // 自定义事件
-  handleItemTap(e) {
-    const { detail } = e
+  // 根据 type 来决定页面标题的数组元素哪个被激活选中  type = 1 index = 0 这样的关系
+  changeTitleByIndex(detail) {
     const { tabs } = this.data
     tabs.forEach((item, index) => {
       detail === index ? item.isActive = true : item.isActive = false
@@ -74,5 +77,17 @@ Page({
     this.setData({
       tabs
     })
+  },
+
+
+  // 自定义事件
+  handleItemTap(e) {
+    const { detail } = e
+
+    // 根据 type 来决定页面标题的数组元素哪个被激活选中  type = 1 index = 0 这样的关系
+    this.changeTitleByIndex(detail)
+
+    // 当点击了不同的标题，重新发送请求获取数据
+    this._lshiOrder(detail + 1)
   }
 })
