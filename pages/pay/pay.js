@@ -104,11 +104,20 @@ Page({
       const res1 = await getPayParams(header, { order_number })
       const { pay } = res1.data.message
 
-      // 发起微信支付  APPID 要一致  wx62cf7cd6483e44af
+      // 发起微信支付  APPID 要一致  所以到这里就进入失败了 进入 catch 里面了
       await requestPayment(pay)
 
       // 查询后台 订单状态
       const res2 = await chkOrder(header, { order_number })
+
+      /* 
+        完成微信支付了
+        手动删除缓存中已经被选中的商品
+        删除后的购物车数据填充回缓存
+      */
+      const cart = wx.getStorageSync('cart')
+      const newnewCart = cart.filter(item => !item.checked)
+      wx.setStorageSync('cart', newnewCart)
 
       // 支付成功 跳转到订单页面
       wx.navigateTo({
