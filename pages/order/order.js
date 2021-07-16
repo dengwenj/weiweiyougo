@@ -65,7 +65,7 @@ Page({
     const { orders } = res.data.message
     this.setData({
       // 转时间 有点行 没想到 还有这操作 牛逼 学到了学到了
-      orders
+      orders: orders.map(item => ({...item, create_time_cn: new Date(item.create_time * 1000).toLocaleString() }))
     })
   },
 
