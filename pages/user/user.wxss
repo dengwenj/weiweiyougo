@@ -1,3 +1,6 @@
+page {
+  background-color: #eee;
+}
 .user-info-warp {
   height: 45vh;
   background-color: var(--themeColor);
@@ -24,7 +27,7 @@
   border-radius: 50%;
 }
 .user-info-warp .user-info .user-imgsm .user-name {
-  margin-top: 20rpx;
+  margin-top: 36rpx;
   color: #fff;
   font-size: 34rpx;
 }
@@ -41,4 +44,96 @@
   color: #fff;
   border-radius: 10rpx;
   font-size: 36rpx;
+}
+.zhongjian {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+.zhongjian .top {
+  display: flex;
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 0;
+}
+.zhongjian .top navigator {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.zhongjian .top navigator .num {
+  color: #d43333;
+  font-size: 26rpx;
+}
+.zhongjian .top navigator .title {
+  font-size: 26rpx;
+  color: #697174;
+}
+.zhongjian .wddd {
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.zhongjian .wddd .dingdan {
+  padding: 15rpx 15rpx;
+  border-bottom: 1px solid #eee;
+  color: #697174;
+  font-size: 26rpx;
+}
+.zhongjian .wddd .si {
+  display: flex;
+}
+.zhongjian .wddd .si navigator {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rpx 0;
+}
+.zhongjian .wddd .si navigator .icon {
+  color: var(--themeColor);
+}
+.zhongjian .wddd .si navigator .text {
+  font-size: 26rpx;
+  color: #697174;
+}
+.zhongjian .guanli {
+  background-color: #fff;
+  margin: 15rpx 0;
+  padding: 15rpx;
+  color: #697174;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+}
+.zhongjian .san {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+.zhongjian .san .lxkf {
+  display: flex;
+  justify-content: space-between;
+  padding: 15rpx;
+  color: #697174;
+  font-size: 26rpx;
+  border-bottom: 1px solid #eee;
+}
+.zhongjian .san .yjfk,
+.zhongjian .san .gywm {
+  padding: 15rpx;
+  color: #697174;
+  font-size: 26rpx;
+  border-bottom: 1px solid #eee;
+}
+.zhongjian .qtr {
+  border-radius: 10rpx;
+  margin-top: 15rpx;
+  background-color: #fff;
+  padding: 15rpx;
+  color: #697174;
+  font-size: 26rpx;
 }

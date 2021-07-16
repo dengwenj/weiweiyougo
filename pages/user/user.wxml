@@ -10,3 +10,54 @@
     <navigator url="/pages/login/login">登录</navigator>
   </view>
 </view>
+<view class="zhongjian">
+  <view class="top">
+    <navigator>
+      <view class="num">0</view>
+      <view class="title">收藏的店铺</view>
+    </navigator>
+    <navigator>
+      <view class="num">0</view>
+      <view class="title">收藏的店铺</view>
+    </navigator>
+    <navigator>
+      <view class="num">0</view>
+      <view class="title">收藏的店铺</view>
+    </navigator>
+    <navigator>
+      <view class="num">0</view>
+      <view class="title">收藏的店铺</view>
+    </navigator>
+  </view>
+  <view class="wddd">
+    <view class="dingdan">我的订单</view>
+    <view class="si">
+      <navigator>
+        <view class="iconfont icon-tubiaozhizuomoban icon"></view>
+        <view class="text">全部订单</view>
+      </navigator>
+      <navigator>
+        <view class="iconfont icon-fukuantongzhi icon"></view>
+        <view class="text">待付款</view>
+      </navigator>
+      <navigator>
+        <view class="iconfont icon-receipt-address icon"></view>
+        <view class="text">待收货</view>
+      </navigator>
+      <navigator>
+        <view class="iconfont icon-tuihuotuikuan_dianpu icon"></view>
+        <view class="text">退款/退货</view>
+      </navigator>
+    </view>
+  </view>
+  <view class="guanli">收货地址管理</view>
+  <view class="san">
+    <view class="lxkf">
+      <view class="kf">联系客服</view>
+      <view class="dh">400-618-4000</view>
+    </view>
+    <view class="yjfk">意见反馈</view>
+    <view class="gywm">关于我们</view>
+  </view>
+  <view class="qtr">把应用推荐给其他人</view>
+</view>
