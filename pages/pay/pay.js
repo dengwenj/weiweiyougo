@@ -75,9 +75,9 @@ Page({
       }
 
       // 创建订单 获取订单编号
-      const header = {
-        Authorization: token
-      }
+      // const header = {
+      //   Authorization: token
+      // }
 
       // 订单数组
       const { newCart } = this.data
@@ -97,18 +97,18 @@ Page({
       }
 
       // 发送请求
-      const res = await cjOrder(header, data)
+      const res = await cjOrder(data)
       const { order_number } = res.data.message // 获取订单编号
 
       // 发送请求 准备预支付 获取支付参数
-      const res1 = await getPayParams(header, { order_number })
+      const res1 = await getPayParams({ order_number })
       const { pay } = res1.data.message
 
       // 发起微信支付  APPID 要一致  所以到这里就进入失败了 进入 catch 里面了
       await requestPayment(pay)
 
       // 查询后台 订单状态
-      const res2 = await chkOrder(header, { order_number })
+      const res2 = await chkOrder({ order_number })
 
       /* 
         完成微信支付了
