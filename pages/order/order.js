@@ -64,6 +64,7 @@ Page({
     const res = await lshiOrder({ type })
     const { orders } = res.data.message
     this.setData({
+      // 转时间 有点行 没想到 还有这操作 牛逼 学到了学到了
       orders
     })
   },

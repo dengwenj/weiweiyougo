@@ -10,6 +10,8 @@ Component({
     }
   },
 
+  externalClasses: ['my-class'],
+
   /**
    * 组件的初始数据
    */

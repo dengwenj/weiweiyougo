@@ -1,1 +1,19 @@
-<Tabs tabs="{{ tabs }}" binditemTap="handleItemTap">内容</Tabs>
+<!-- 外部样式类 my-class -->
+<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="handleItemTap">
+  <view class="zhengge">
+    <view class="order" wx:for="{{  orders }}" wx:key="order_id">
+      <view class="yi">
+        <view class="bh">订单编号</view>
+        <view class="bianhao">{{ item.order_number }}</view>
+      </view>
+      <view class="er">
+        <view class="jg">订单价格</view>
+        <view class="jiage">￥{{ item.total_price }}</view>
+      </view>
+      <view class="san">
+        <view class="rq">订单日期</view>
+        <view class="riqi">{{ item.create_time_cn }}</view>
+      </view>
+    </view>
+  </view>
+</Tabs>
