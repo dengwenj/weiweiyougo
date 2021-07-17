@@ -1,2 +1,11 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="search_row">
+  <input type="text" placeholder="请输入您要搜索的商品" />
+  <button>取消</button>
+</view>
+<view class="content">
+  <view class="title">毒贩夫妇巫毒娃娃多我晚点</view>
+  <view class="title">毒贩夫妇巫毒娃娃多我晚点</view>
+  <view class="title">毒贩夫妇巫毒娃娃多我晚点</view>
+  <view class="title">毒贩夫妇巫毒娃娃多我晚点</view>
+  <view class="title">毒贩夫妇巫毒娃娃多我晚点</view>
+</view>

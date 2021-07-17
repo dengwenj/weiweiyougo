@@ -71,6 +71,12 @@
           "pathName": "pages/collect/collect",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "搜索中心",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
         }
       ]
     }
