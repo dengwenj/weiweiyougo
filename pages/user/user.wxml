@@ -56,7 +56,7 @@
       <view class="kf">联系客服</view>
       <view class="dh">400-618-4000</view>
     </view>
-    <view class="yjfk">意见反馈</view>
+    <navigator url="/pages/feedback/feedback" class="yjfk">意见反馈</navigator>
     <view class="gywm">关于我们</view>
   </view>
   <view class="qtr">把应用推荐给其他人</view>

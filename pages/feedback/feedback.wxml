@@ -1,2 +1,1 @@
-<!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="ItemTap">111</Tabs>
