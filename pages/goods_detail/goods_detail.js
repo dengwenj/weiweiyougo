@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goodsDetail: {} // 商品详情 
+    goodsDetail: {}, // 商品详情 
+    isCollect: false // 商品收藏
   },
 
   // 商品详情全部数据
@@ -15,9 +16,31 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onShow: function() {
+    // 页面栈 
+    const curPages = getCurrentPages()
+    const { options } = curPages[curPages.length - 1]
+
     const { goods_id } = options
     this._getGoodsDetail(goods_id)
+
+    /* 
+      商品收藏
+      1 页面 onShow 的时候，加载缓存中的商品收藏的数据
+      2 判断当前商品是不是被收藏
+        1 是 改变页面的图标
+        2 不是
+      3 点击商品收藏按钮
+        1 判断该商品是否存在于缓存数组中
+        2 已经存在 把该商品删除
+        3 没有存在 把商品添加到收藏数组中 存入到缓存中
+    */
+    const collect = wx.getStorageSync('collect') || []
+      // some 方法就是里面只要有一个满足条件的话 就返回 true  空数组返回的是 false
+    const isCollect = collect.some(item => { item.goods_id === this.goodsXQ.goods_id })
+    this.setData({
+      isCollect // 商品收藏
+    })
   },
 
   // 获取商品详情数据

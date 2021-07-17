@@ -1,5 +1,5 @@
 <SearchInput />
-<Tabs tabs="{{ tabs }}" binditemTap="ItemTap">
+<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="ItemTap">
   <view class="zh" wx:if="{{ tabs[0].isActive }}">
     <navigator url="/pages/goods_detail/goods_detail?goods_id={{ item.goods_id }}" class="zh-item" wx:for="{{ goodsList }}" wx:key="goods_id">
       <!-- 左边图片 -->
