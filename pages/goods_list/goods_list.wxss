@@ -14,7 +14,7 @@
   flex: 2;
 }
 .zh-item .left .image {
-  width: 80%;
+  width: 60%;
 }
 .zh-item .right {
   flex: 3;

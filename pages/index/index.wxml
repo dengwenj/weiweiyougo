@@ -6,7 +6,7 @@
   <view class="array">
     <swiper class="swiper" autoplay indicator-dots interval="3000" circular>
       <swiper-item class="swiper-item" wx:for="{{ swiperList }}" wx:key="goods_id">
-        <navigator>
+        <navigator url="/pages/goods_detail/goods_detail?goods_id=129{{ index }}">
           <image class="swiper-image" src="{{ item.image_src }}" mode="widthFix"></image>
         </navigator>
       </swiper-item>
@@ -16,7 +16,7 @@
   <!-- 导航 -->
   <view class="nav">
     <view class="nav-item" wx:for="{{ navList }}" wx:key="name">
-      <navigator class="dh">
+      <navigator class="dh" url="/pages/category/category" open-type="switchTab">
         <image class="nav-image" src="{{ item.image_src }}" mode="widthFix"></image>
       </navigator>
     </view>
@@ -34,7 +34,7 @@
         <!-- 内容 -->
         <view class="bottom">
           <view class="product_list" wx:for="{{ item.product_list }}" wx:key="image_width" wx:for-item="item2" wx:for-index="index2">
-            <navigator class="">
+            <navigator url="/pages/goods_detail/goods_detail?goods_id=54819">
               <image class="image2" src="{{ item2.image_src }}" mode="{{index2 === 0 ? 'widthFix':'widthFix'}}"></image>
             </navigator>
           </view>
