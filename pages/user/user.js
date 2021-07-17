@@ -5,14 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo: {} // 用户个人信息
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
+    userInfo: {}, // 用户个人信息
+    collectNums: null // 收藏商品数量
   },
 
   /**
@@ -22,6 +16,12 @@ Page({
     const userInfo = wx.getStorageSync('userInfo')
     this.setData({
       userInfo
+    })
+
+    const collect = wx.getStorageSync('collect')
+    const collectNums = collect.length
+    this.setData({
+      collectNums
     })
   },
 })
