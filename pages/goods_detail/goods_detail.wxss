@@ -102,3 +102,6 @@
   background-color: #f6554d;
   color: #fff;
 }
+.active {
+  color: var(--themeColor);
+}

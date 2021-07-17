@@ -16,8 +16,8 @@
         <view class="left">
           <text class="goods_name">{{ goodsDetail.goods_name }}</text>
         </view>
-        <view class="right">
-          <text class="iconfont icon-shoucang"></text>
+        <view class="right" bindtap="handleCollectTap">
+          <text class="iconfont icon-shoucang {{  isCollect ? 'active':'' }}"></text>
           <text class="shoucang">收藏</text>
         </view>
       </view>
