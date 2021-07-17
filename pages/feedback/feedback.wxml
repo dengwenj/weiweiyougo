@@ -11,7 +11,7 @@
       <textarea placeholder="请描述一下您的问题"></textarea>
       <view class="btn">
         <button bindtap="handleChooseBtn">+</button>
-        <view class="img-item" wx:for="{{ img }}" wx:key="*this">
+        <view class="img-item" wx:for="{{ img }}" wx:key="*this" bindtap="handleRemoveTap" data-index="{{ index }}">
           <UpImg img="{{ item }}"></UpImg>
         </view>
       </view>

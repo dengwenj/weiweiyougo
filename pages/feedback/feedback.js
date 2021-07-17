@@ -43,5 +43,16 @@ Page({
     this.setData({
       img
     })
+  },
+
+  // 点击删除图片
+  handleRemoveTap(e) {
+    const { index } = e.currentTarget.dataset
+    console.log(index);
+    const { img } = this.data
+    img.splice(index, 1)
+    this.setData({
+      img
+    })
   }
 })
