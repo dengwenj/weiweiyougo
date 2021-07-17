@@ -1,7 +1,9 @@
 <view class="search_row">
-  <input type="text" placeholder="请输入您要搜索的商品" bindinput="handleInput" />
-  <button>取消</button>
+  <input value="{{ inpValue }}" type="text" placeholder="请输入您要搜索的商品" bindinput="handleInput" />
+  <button hidden="{{ !isShow }}" bindtap="handleBtnTap">取消</button>
 </view>
 <view class="content" wx:for="{{ goods }}" wx:key="goods_id">
-  <view class="title">{{ item.goods_name }}</view>
+  <navigator class="title" url="/pages/goods_detail/goods_detail?goods_id={{ item.goods_id }}">
+    {{ item.goods_name }}
+  </navigator>
 </view>
