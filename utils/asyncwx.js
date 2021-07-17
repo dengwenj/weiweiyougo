@@ -57,3 +57,20 @@ export const getUserProfile = () => {
     })
   })
 }
+
+// 相册选择图片或使用相机拍照
+export const chooseImage = () => {
+  return new Promise((resolve, reject) => {
+    wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (result) => {
+        resolve(result)
+      },
+      fail: (err) => {
+        reject(err)
+      },
+    })
+  })
+}
