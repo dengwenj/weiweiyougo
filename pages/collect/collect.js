@@ -29,8 +29,8 @@ Page({
   onShow() {
     // 页面栈
     const curPages = getCurrentPages()
-    console.log(curPages);
-    // 当前的页面就是最大索引
+      // console.log(curPages);
+      // 当前的页面就是最大索引
     const { id } = curPages[curPages.length - 1].options
     this.changeIndex(parseInt(id))
 
@@ -41,7 +41,7 @@ Page({
   },
 
   changeIndex(detail) {
-    console.log(detail);
+    // console.log(detail);
     const { tabs } = this.data
     tabs.forEach(item => {
       item.id === detail ? item.isActive = true : item.isActive = false

@@ -5,7 +5,7 @@
       <view class="remai">正在热卖</view>
       <view class="shangxian">即将上线</view>
     </view>
-    <navigator class="content" wx:for="{{ collect }}" wx:key="goods_id">
+    <navigator url="/pages/goods_detail/goods_detail?goods_id={{ item.goods_id }}" class="content" wx:for="{{ collect }}" wx:key="goods_id">
       <view class="left">
         <image src="{{ item.goods_small_logo }}" mode="widthFix"></image>
       </view>
