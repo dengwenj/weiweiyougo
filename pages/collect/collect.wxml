@@ -1,2 +1,21 @@
-<!--pages/collect/collect.wxml-->
-<text>pages/collect/collect.wxml</text>
+<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="tabsItemTap">
+  <view wx:if="{{ tabs[detail].id === 0 }}">
+    <view class="san">
+      <view class="quanbu">全部</view>
+      <view class="remai">正在热卖</view>
+      <view class="shangxian">即将上线</view>
+    </view>
+    <navigator class="content" wx:for="{{ collect }}" wx:key="goods_id">
+      <view class="left">
+        <image src="{{ item.goods_small_logo }}" mode="widthFix"></image>
+      </view>
+      <view class="right">
+        <view class="title">{{ item.goods_name }}</view>
+        <view class="price">￥{{ item.goods_price }}</view>
+      </view>
+    </navigator>
+  </view>
+  <view class="kaifa" wx:elif="{{ tabs[detail].id === 1 }}">开发中...</view>
+  <view class="kaifa" wx:elif="{{ tabs[detail].id === 2 }}">开发中...</view>
+  <view class="kaifa" wx:else>开发中...</view>
+</Tabs>

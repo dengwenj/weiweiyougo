@@ -1,1 +1,67 @@
-/* pages/collect/collect.wxss */
+page {
+  background-color: #f2f4f5;
+}
+.tabs {
+  display: flex;
+}
+.san {
+  display: flex;
+  padding: 20rpx;
+}
+.san .quanbu {
+  color: var(--themeColor);
+  border: 1px solid var(--themeColor);
+  padding: 10rpx;
+  margin-right: 10rpx;
+}
+.san .remai {
+  margin-right: 10rpx;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  color: #29291f;
+}
+.san .shangxian {
+  margin-right: 10rpx;
+  padding: 10rpx;
+  border: 1px solid #ccc;
+  color: #29291f;
+}
+.content {
+  background-color: #fff;
+  display: flex;
+  border: 1px solid #eee;
+}
+.content .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+}
+.content .left image {
+  width: 80%;
+}
+.content .right {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.content .right .title {
+  color: #343b31;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.content .right .price {
+  color: 30rpx;
+  color: #d64242;
+}
+.kaifa {
+  color: var(--themeColor);
+  font-size: 50rpx;
+  margin-top: 60rpx;
+  text-align: center;
+}

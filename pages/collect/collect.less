@@ -1,0 +1,67 @@
+page{
+  background-color: #f2f4f5;
+}
+.tabs{
+  display: flex;
+}
+.san{
+  display: flex;
+  padding: 20rpx;
+  .quanbu{
+    color: var(--themeColor);
+    border: 1px solid var(--themeColor);
+    padding: 10rpx;
+    margin-right: 10rpx;
+  }
+  .remai{
+    margin-right: 10rpx;
+    padding: 10rpx;
+    border: 1px solid #ccc;
+    color: #29291f;
+  }
+  .shangxian{
+    margin-right: 10rpx;
+    padding: 10rpx;
+    border: 1px solid #ccc;
+    color: #29291f;
+  }
+}
+.content{
+  background-color: #fff;
+  display: flex;
+  border: 1px solid #eee;
+  .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+    image{
+      width: 80%;
+    }
+  }
+  .right{
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .title{
+      color: #343b31;
+      font-size: 28rpx;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display:-webkit-box; //作为弹性伸缩盒子模型显示。
+      -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
+      -webkit-line-clamp:2; //显示的行
+    }
+    .price{
+      color: 30rpx;
+      color: rgb(214, 66, 66);
+    }
+  }
+}
+.kaifa{
+  color: var(--themeColor);
+  font-size: 50rpx;
+  margin-top: 60rpx;
+  text-align: center;
+}
