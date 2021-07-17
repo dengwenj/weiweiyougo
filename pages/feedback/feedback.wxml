@@ -1,1 +1,20 @@
-<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="ItemTap">111</Tabs>
+<Tabs my-class="tabs" tabs="{{ tabs }}" binditemTap="ItemTap">
+  <view class="content">
+    <view class="title">问题的种类</view>
+    <view class="si">
+      <text>功能建议</text>
+      <text>购买遇到问题</text>
+      <text>性能问题</text>
+      <text>其他</text>
+    </view>
+    <view class="wenben">
+      <textarea placeholder="请描述一下您的问题"></textarea>
+      <view class="btn">
+        <button>+</button>
+      </view>
+    </view>
+    <view class="tijiao">
+      <button>提交</button>
+    </view>
+  </view>
+</Tabs>
