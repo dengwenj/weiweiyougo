@@ -11,6 +11,36 @@
       <textarea placeholder="请描述一下您的问题"></textarea>
       <view class="btn">
         <button>+</button>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
+        <view class="img-item">
+          <UpImg></UpImg>
+        </view>
       </view>
     </view>
     <view class="tijiao">
