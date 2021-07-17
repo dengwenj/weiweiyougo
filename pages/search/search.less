@@ -27,7 +27,7 @@ page{
   }
 }
 .content{
-  margin: 10rpx; 
+  margin: 10rpx 20rpx;
   .title{
     border-radius: 10rpx;
     line-height: 70rpx;
@@ -36,5 +36,10 @@ page{
     background-color: #fff;
     padding-left: 10rpx;
     color: #4c5136;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:-webkit-box; //作为弹性伸缩盒子模型显示。
+    -webkit-box-orient:vertical; //设置伸缩盒子的子元素排列方式--从上到下垂直排列
+    -webkit-line-clamp:1; //显示的行
   }
 }

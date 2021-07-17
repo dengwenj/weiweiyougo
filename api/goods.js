@@ -17,3 +17,12 @@ export const getGoodsDetail = data => {
     data
   })
 }
+
+// 商品搜索
+export const categorySearch = data => {
+  return request({
+    url: '/goods/qsearch',
+    method: 'GET',
+    data
+  })
+}
